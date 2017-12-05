@@ -54,6 +54,9 @@ namespace Adventofcode2017
                 case 3:
                     challenge = new Day3();
                     break;
+                case 4:
+                    challenge = new Day4();
+                    break;
                 default:
                     return $"Day {day} not found";
             }
