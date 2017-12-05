@@ -21,7 +21,7 @@ namespace Adventofcode2017.Days
             var captcha = input[0] + input[0][0];
             var pairs = captcha.Where((e, i) => i < captcha.Length - 1)
                 .Select((e, i) => new { A = e, B = captcha[i + 1] })
-                .Where(pair => pair.A == pair.B).Sum(pair => int.Parse(pair.A.ToString()));
+                .Where(pair => pair.A == pair.B).Sum(pair => pair.A - '0');
 
             return pairs.ToString();
         }
@@ -29,9 +29,9 @@ namespace Adventofcode2017.Days
         public string Part2(string[] input)
         {
             var captcha = input[0];
-            var pairs = captcha.Where((e, i) => i < captcha.Length)
+            var pairs = captcha
                 .Select((e, i) => new { A = e, B = captcha[GetIndexHalfwayAround(captcha.Length, i)] })
-                .Where(pair => pair.A == pair.B).Sum(pair => int.Parse(pair.A.ToString()));
+                .Where(pair => pair.A == pair.B).Sum(pair => pair.A - '0');
 
             return pairs.ToString();
         }
