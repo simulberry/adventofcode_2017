@@ -14,7 +14,7 @@ namespace Adventofcode2017.Tests.Days
         public void Part1(string input, string expected)
         {
             var day1 = new Day1();
-            day1.Part1(input).Should().Be(expected);
+            day1.Part1(new[] { input }).Should().Be(expected);
         }
 
         [Theory]
@@ -26,7 +26,7 @@ namespace Adventofcode2017.Tests.Days
         public void Part2(string input, string expected)
         {
             var day1 = new Day1();
-            day1.Part2(input).Should().Be(expected);
+            day1.Part2(new[] { input }).Should().Be(expected);
         }
     }
 }

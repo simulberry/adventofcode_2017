@@ -2,7 +2,7 @@
 {
     public interface IDayChallenge
     {
-        string Part1(string input);
-        string Part2(string input);
+        string Part1(string[] input);
+        string Part2(string[] input);
     }
 }

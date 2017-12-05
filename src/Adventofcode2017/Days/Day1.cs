@@ -16,20 +16,21 @@ namespace Adventofcode2017.Days
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
-        public string Part1(string input)
+        public string Part1(string[] input)
         {
-            input += input[0];
-            var pairs = input.Where((e, i) => i < input.Length - 1)
-                .Select((e, i) => new { A = e, B = input[i + 1] })
+            var captcha = input[0] + input[0][0];
+            var pairs = captcha.Where((e, i) => i < captcha.Length - 1)
+                .Select((e, i) => new { A = e, B = captcha[i + 1] })
                 .Where(pair => pair.A == pair.B).Sum(pair => int.Parse(pair.A.ToString()));
 
             return pairs.ToString();
         }
 
-        public string Part2(string input)
+        public string Part2(string[] input)
         {
-            var pairs = input.Where((e, i) => i < input.Length)
-                .Select((e, i) => new { A = e, B = input[GetIndexHalfwayAround(input.Length, i)] })
+            var captcha = input[0];
+            var pairs = captcha.Where((e, i) => i < captcha.Length)
+                .Select((e, i) => new { A = e, B = captcha[GetIndexHalfwayAround(captcha.Length, i)] })
                 .Where(pair => pair.A == pair.B).Sum(pair => int.Parse(pair.A.ToString()));
 
             return pairs.ToString();
