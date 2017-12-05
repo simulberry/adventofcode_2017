@@ -21,7 +21,7 @@ namespace Adventofcode2017
                 throw new ArgumentException("Enter day number, part number (1 or 2), then input string or `-file filename`");
             }
 
-            if (args.Length > 5 || args[FileOptionIndex] != "-file")
+            if (args.Length > 5 && args[FileOptionIndex] != "-file")
             {
                 throw new ArgumentException("Use -file filename to input a file");
             }
@@ -50,6 +50,9 @@ namespace Adventofcode2017
                     break;
                 case 2:
                     challenge = new Day2();
+                    break;
+                case 3:
+                    challenge = new Day3();
                     break;
                 default:
                     return $"Day {day} not found";
